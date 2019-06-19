@@ -13,18 +13,13 @@ const server = app.listen(port, host);
 
 console.log(`server listening on http://${host}:${port}`);
 
-function logIn(a,b,c,d){
-  console.log(`in a:${a}, b:${b}, c:${c}, d:${d}.........`);
+function logIn(msg){
+  console.log(`in msg:${JSON.stringify(msg)}.........`);
 }
 
-function logOut(a,b,c,d){
-  console.log(`in a:${a}, b:${b}, c:${c}, d:${d}.........`);
+function logOut(msg){
+  cconsole.log(`out msg:${JSON.stringify(msg)}.........`);
 }
-
-Gun.on('in', logIn);
-
-Gun.on('out', logOut);
-
 
 var gun = Gun({
   web: server,
@@ -32,12 +27,15 @@ var gun = Gun({
   radisk: false
 });
 
+gun._.on('in', logIn);
+gun._.on('out', logOut);
+
 function logPeers() {
   console.log(`Peers: ${Object.keys(gun._.opt.peers).join(', ')}`);
 }
 
 function logData() {
-  console.log(`In Memory: ${gun._.graph}`);
+  console.log(`In Memory: ${JSON.stringify(gun._.graph)}`);
 }
 
 setInterval(logPeers, 5000); //Log peer list every 5 secs
