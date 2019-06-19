@@ -18,7 +18,7 @@ function logIn(msg){
 }
 
 function logOut(msg){
-  cconsole.log(`out msg:${JSON.stringify(msg)}.........`);
+  console.log(`out msg:${JSON.stringify(msg)}.........`);
 }
 
 var gun = Gun({
