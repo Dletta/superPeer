@@ -1,17 +1,28 @@
 const path = require('path');
 const express = require('express');
+var fs = require('fs')
+var https = require('https')
 const Gun = require('gun');
 const SEA = require("gun/sea");
+require("gun/lib/webrtc");
 
-const port = (process.env.PORT || 8080);
-const host = '0.0.0.0';
+const port = (process.env.PORT || 8443); // 8443 important if using Cloudflare.
+//const host = '0.0.0.0';
 
 const app = express();
 app.use(Gun.serve);
 
-const server = app.listen(port, host);
+// Load your cert and priv key files. LetsEncrypt cert files can be copied
+// from  /etc/letsencrypt/live/<yourdomain>/
+const server = https.createServer({
+  key: fs.readFileSync('cert/privkey.pem'),
+  cert: fs.readFileSync('cert/cert.pem')
+}, app)
+.listen(port, function () {
+  console.log(`server listening on port: ${port}`);
+})
 
-console.log(`server listening on http://${host}:${port}`);
+
 
 function logIn(msg){
   console.log(`in msg:${JSON.stringify(msg)}.........`);
@@ -51,3 +62,4 @@ app.get('*', function(_, res) {
 
 
 // Most of this code provided by @thinkingjoules
+// SSL/HTTPS by @TensorTom
