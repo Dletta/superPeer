@@ -9,6 +9,7 @@ require("gun/lib/webrtc");
 
 const port = (process.env.PORT || 8080);
 const sslPort = (process.env.PORT || 8443); // 8443 important if using Cloudflare.
+const sslHost = "example.com"
 //const host = '0.0.0.0';
 
 const app = express();
@@ -48,18 +49,17 @@ function ssLogOut(msg){
 var sslGun = Gun({
     peers: [`http://localhost:${port}/gun`],
     web: sslServer,
-    localStorage: true,
     file: 'data',
     radisk: true,
-    AXE: false
+    axe: false
 });
 
 var gun = Gun({
-    peers: [`https://tensortom.com:${sslPort}/gun`],
+    peers: [`https://${sslHost}:${sslPort}/gun`],
     web: server,
     localStorage: false,
     radisk: false,
-    AXE: false
+    axe: false
 });
 
 sslGun._.on('in', ssLogIn);
