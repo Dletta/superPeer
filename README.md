@@ -24,4 +24,6 @@ These behaviors can be enabled, disabled, and mix-matched.
 
 Source for Docker Hub Container included.
 
+Original, non-persistent, non-ssl version here: https://github.com/Dletta/superPeer.git
+
 License: MIT
