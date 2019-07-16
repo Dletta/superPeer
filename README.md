@@ -5,7 +5,7 @@ These behaviors can be enabled, disabled, and mix-matched.
 
 ### Options
 
-**useSSL**_=true_ // Enable the HTTP server. If enabled, you must supply `cert.pem` and `privkey.pem`.
+**useSSL**_=true_ // Enable the HTTPS server. If enabled, you must supply `cert.pem` and `privkey.pem`.
 
 **useHTTP**_=true_ // Enable the HTTP server.
 
