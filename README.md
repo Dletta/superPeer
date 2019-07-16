@@ -20,6 +20,12 @@ These behaviors can be enabled, disabled, and mix-matched.
 **sslHost**_=example.com_ // This must be set to the domain matching your SSL certificate .pem files if `useSSL` ==
 `true`.
 
+### Status
+
+This superNode works good. I have suppressed the latest version of Gun in `package.json` until a bug
+([issue 769](https://github.com/amark/gun/issues/769)) preventing Express working is fixed. Mark tells me this should
+only take a few days. No big deal as the superNode is doing what it needs to do currently.
+
 ### Misc
 
 Source for Docker Hub Container included.
