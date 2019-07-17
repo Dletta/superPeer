@@ -43,7 +43,7 @@ npm start
 
 ### Status
 
-This superNode works good. I have suppressed the latest version of Gun in `package.json` until a bug
+This superNode works well. I have suppressed the latest version of Gun in `package.json` until a bug
 ([issue 769](https://github.com/amark/gun/issues/769)) preventing Express working is fixed. Mark tells me this should
 only take a few days. No big deal as the superNode is doing what it needs to do currently.
 
