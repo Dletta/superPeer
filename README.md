@@ -23,7 +23,11 @@ Then:
 npm install
 npm start
 ```
-
+To run in background between terminal sessions (On Linux):
+```
+npm install supervisor -g
+nohup npm run start-continuous > superPeer.out 2>&1 &
+```
 ### Options
 
 **useSSL**_=true_ // Enable the HTTPS server. If enabled, you must supply `cert.pem` and `privkey.pem`.
