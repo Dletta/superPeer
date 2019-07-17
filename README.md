@@ -3,6 +3,27 @@ A persistent, SEA-enabled, [gundb](https://github.com/amark/gun) node server for
 runs a Gun node on both HTTP  and HTTPS. Technically, it is running two nodes that are syncing with each-other locally.
 These behaviors can be enabled, disabled, and mix-matched.
 
+### Quickstart
+First:
+```
+git clone https://github.com/TensorTom/superPeer.git
+cd superpeer
+```
+If you're using SSL:
+```
+sed -i 's/example.com/yourdomain.com/g' index.js
+```
+If you're using LetsEncrypt:
+```
+cp /etc/letsencrypt/live/yourdomain.com/cert.pem cert/
+cp /etc/letsencrypt/live/yourdomain.com/privkey.pem cert/
+```
+Then:
+```
+npm install
+npm start
+```
+
 ### Options
 
 **useSSL**_=true_ // Enable the HTTPS server. If enabled, you must supply `cert.pem` and `privkey.pem`.
