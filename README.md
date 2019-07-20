@@ -55,6 +55,15 @@ only take a few days. No big deal as the superNode is doing what it needs to do 
 
 Source for Docker Hub Container included.
 
-Original, non-persistent, non-ssl version here: https://github.com/Dletta/superPeer.git
+Original repo (Started as non-persistent, non-ssl): https://github.com/Dletta/superPeer.git
 
-License: MIT
+superPeer is also developing from TensorTom's fork: https://github.com/TensorTom/superPeer
+
+**TensorTom vs Dletta:** We will also maintain an original branch on @Dletta's repo though this new version allows you
+to disable persistence if you don't want it. My (TensorTom) fork will be more open to new features. After testing,
+commits will merge to @Dletta's master.
+
+**Note:** I won't accept any PRs that make peers more reliant on the superPeer (Extra auth, sessions, etc.). Please
+do that from client-side.
+
+**License:** MIT
