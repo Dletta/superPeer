@@ -47,9 +47,9 @@ nohup npm run start-continuous > superPeer.out 2>&1 &
 
 ### Status
 
-This superNode works well. I have suppressed the latest version of Gun in `package.json` until a bug
-([issue 769](https://github.com/amark/gun/issues/769)) preventing Express working is fixed. Mark tells me this should
-only take a few days. No big deal as the superNode is doing what it needs to do currently.
+This superNode works well.
+
+Gun ([issue 769](https://github.com/amark/gun/issues/769)) is now fixed and so I have upgraded this repo's gun to the latest version.
 
 ### Misc
 
