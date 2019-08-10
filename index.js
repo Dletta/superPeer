@@ -101,4 +101,4 @@ app.get('*', function(_, res) {
 
 
 // Base code by @thinkingjoules
-// SSL/HTTPS by @TensorTom
+// SSL/HTTPS & presistence by @TensorTom
