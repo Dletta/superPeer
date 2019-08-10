@@ -49,7 +49,7 @@ nohup npm run start-continuous > superPeer.out 2>&1 &
 
 This superNode works well.
 
-Gun ([issue 769](https://github.com/amark/gun/issues/769)) is now fixed and so I have upgraded this repo's gun to the latest version.
+Gun [issue 769](https://github.com/amark/gun/issues/769) is now fixed and so I have upgraded this repo's gun to the latest version.
 
 ### Misc
 
