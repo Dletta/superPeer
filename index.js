@@ -11,7 +11,7 @@ const rtc = require("gun/lib/webrtc");
 const useSSL = true; // Run SSL/HTTPS server? If set to true, you must supply cert.pem and privkey.pem (See below).
 const useHTTP = true; // Run HTTP server?
 const peerify = true; // Connect HTTP & HTTPS servers as peers of each-other?
-const persistence = true;
+const persistence = true; // Use storage to disk?
 const port = (process.env.PORT || 8080); // 8080 can be used with Cloudflare.
 const sslPort = (process.env.PORT || 8443); // 8443 can be used with Cloudflare.
 const sslHost = "example.com"; // The domain of your SSL certificate.
@@ -62,7 +62,7 @@ if(useSSL){
         peers: [(peerify ? `http://localhost:${port}/gun` : '')],
         web: sslServer,
         file: 'data',
-        radisk: (persistence && useSSL),
+        radisk: persistence,
         axe: false
     });
 
@@ -80,7 +80,7 @@ if(useHTTP){
         web: server,
         file: 'data',
         localStorage: false,
-        radisk: (persistence && useHTTP && !useSSL),
+        radisk: (persistence && !useSSL),
         axe: false
     });
 
