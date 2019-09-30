@@ -21,11 +21,23 @@ function logOut(msg){
   console.log(`out msg:${JSON.stringify(msg)}.........`);
 }
 
-var gun = Gun({
+var gunOpts = {
   web: server,
   localStorage: false,
   radisk: false
-});
+}
+
+if (process.env.RADISK) {
+  console.log('Enabling radisk due to envvar')
+  gunOpts['radisk'] = true;
+}
+          
+if (process.env.PEERS) {
+  console.log('Setting peers based on envvar:', process.env.PEERS)
+  gunOpts['peers'] = process.env.PEERS.split(',');
+}         
+
+var gun = Gun(gunOpts);
 
 gun._.on('in', logIn);
 gun._.on('out', logOut);
