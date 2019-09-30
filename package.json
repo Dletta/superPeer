@@ -29,6 +29,6 @@
     "express": "^4.17.1",
     "gun": "^0.2019.612",
     "node-gyp": "^5.0.0",
-    "node-webcrypto-ossl": "^1.0.47"
+    "node-webcrypto-ossl": "^1.0.48"
   }
 }
