@@ -24,12 +24,18 @@ function logOut(msg){
 var gunOpts = {
   web: server,
   localStorage: false,
+  file: false,
   radisk: false
 }
 
 if (process.env.RADISK) {
-  console.log('Enabling radisk due to envvar')
+  console.log('Enabling radix due to envvar')
   gunOpts['radisk'] = true;
+}
+
+if (process.env.FILE) {
+  console.log('Enabling file storage due to envvar')
+  gunOpts['file'] = process.env.FILE;
 }
           
 if (process.env.PEERS) {
