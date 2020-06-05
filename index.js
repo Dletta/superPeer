@@ -8,7 +8,7 @@ const SEA = require("gun/sea");
 const rtc = require("gun/lib/webrtc");
 
 
-const useSSL = true; // Run SSL/HTTPS server? If set to true, you must supply cert.pem and privkey.pem (See below).
+const useSSL = false; // Run SSL/HTTPS server? If set to true, you must supply cert.pem and privkey.pem (See below).
 const useHTTP = true; // Run HTTP server?
 const peerify = true; // Connect HTTP & HTTPS servers as peers of each-other?
 const persistence = true; // Use storage to disk?
