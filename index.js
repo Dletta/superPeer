@@ -14,11 +14,11 @@ const server = app.listen(port, host);
 console.log(`server listening on http://${host}:${port}`);
 
 function logIn(msg){
-  console.log(`in msg:${JSON.stringify(msg)}.........`);
+  console.log(`in msg.`); //:${JSON.stringify(msg)}.........`);
 }
 
 function logOut(msg){
-  console.log(`out msg:${JSON.stringify(msg)}.........`);
+  console.log(`out msg`); //:${JSON.stringify(msg)}.........`);
 }
 
 var gunOpts = {
@@ -53,7 +53,7 @@ function logPeers() {
 }
 
 function logData() {
-  console.log(`In Memory: ${JSON.stringify(gun._.graph)}`);
+  //console.log(`In Memory: ${JSON.stringify(gun._.graph)}`);
 }
 
 setInterval(logPeers, 5000); //Log peer list every 5 secs
