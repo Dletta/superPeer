@@ -27,6 +27,6 @@
   "homepage": "https://github.com/Dletta/superPeer#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "gun": "^0.2019.930"
+    "gun": "^0.2020.1235"
   }
 }
